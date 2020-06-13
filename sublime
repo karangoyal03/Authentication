@@ -1,0 +1,57 @@
+
+
+													OAuth concepts using Passport-js
+
+															Net-Ninja (Youtube)
+
+
+ npm init
+
+ npm install ejs express
+
+
+ set up basic express app and set view engine 
+ and make a new views folder and make Home.ejs file
+ and copy paste the html from github directory of 
+ net-ninja .
+
+
+ set routes for different different functionality
+ route.get('/login')
+ route.get('/logout')
+ route.get('/google') =>for google + 
+yeh sb set krne ke baad hum isse export kr denge 
+and apni server.js wali file mein isse hum import krle lenge app.use ke saath
+
+
+npm install passport passport-google-oauth20
+
+
+clientid:322110728601-agau3m1dsej7ikjn9qp1breu2h2ojd2k.apps.googleusercontent.com
+clientsecret:XYp6-yioaEznlDjZTcX6WRAQ
+
+
+
+lecture-15 mein
+
+
+hum 2 function bnayenge 
+
+passport.serializeUser((user,done)=>{
+	done(null,user.id);
+	//yahan pr null h woh error ke liye h 
+	//yeh function jab call hoga jab hume user mil jayega toh error ke liye null kr denge 
+
+})
+
+passport.deserializeUser((id,done)=>{
+	User.findById(id).then((user)=>{
+		done(null,user)
+	})
+})
+
+
+
+lecture -16 
+jab cookie generate krne ki zarurat padegi toh hum 
+npm install cookie-session  krenge 
