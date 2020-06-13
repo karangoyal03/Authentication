@@ -51,9 +51,9 @@
         <ul>
             {{#if user}}
             <li><a href="/auth/logout">Logout</a></li>
+            <li><a href='/auth/signup'>SignUp</a></li>
             {{else}}
             <li><a href="/auth/login">Login</a></li>
-            <li><a href='/auth/signup'>SignUp</a></li>
             {{/if}}
 
             <li><a href="/">Homepage</a></li>
@@ -61,13 +61,15 @@
             
         </ul>
     </nav>
-    <header>
-        <h1>Net Ninja OAuth Tut's</h1>
-        <h2>Homepage</h2>
-    </header>
-    <main>
-        <p>Probably the best OAuth tutorials on the planet :)</p>
-    </main>
+    <div>
+        <input type="text" name="username" placeholder="username" id="username">
+        <br>
+        <input type="password" name="password" placeholder="password" id="password">
+        <br>
+        <input type="email" name="email" placeholder="email" id="email">
+        <br>
+        <button type="button">Submit</button>
+    </div>
 </body>
 
 </html>

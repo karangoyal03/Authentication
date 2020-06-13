@@ -6,6 +6,7 @@ const passportSetup = require("./config/passport-setup");
 const githubSetup=require('./config/github-setup');
 const linkedInSetup=require('./config/linked-in-setup')
 const facebookSetup=require('./config/facebook-setup')
+const loginSignupSetup=require('./config/login-signup-setup')
 const mongoose = require("mongoose");
 const passport = require("passport");
 
