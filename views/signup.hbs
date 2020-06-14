@@ -62,13 +62,16 @@
         </ul>
     </nav>
     <div>
-        <input type="text" name="username" placeholder="username" id="username">
-        <br>
-        <input type="password" name="password" placeholder="password" id="password">
-        <br>
-        <input type="email" name="email" placeholder="email" id="email">
-        <br>
-        <button type="button">Submit</button>
+        <form action="/auth/signup">
+            <input type="text" name="username" placeholder="username" id="username">
+            <br>
+            <input type="password" name="password" placeholder="password" id="password">
+            <br>
+            <input type="email" name="email" placeholder="email" id="email">
+            <br>
+            <button class="Submit" type="submit">Submit</button>
+        </form>
+        
     </div>
 </body>
 

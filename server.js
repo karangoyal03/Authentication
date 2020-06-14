@@ -14,7 +14,7 @@ const cookieSession = require("cookie-session");
 
 mongoose.Promise = global.Promise; //ES6 promise
 mongoose.set("useCreateIndex", true);
-mongoose.connect("mongodb://localhost:27017/authpracticeusingfacebook", {
+mongoose.connect("mongodb://localhost:27017/authpracticeusinglocal", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
