@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 
 const cookieSession = require("cookie-session");
+const { json } = require("express");
 
 mongoose.Promise = global.Promise; //ES6 promise
 mongoose.set("useCreateIndex", true);
@@ -34,6 +35,11 @@ app.use(
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(express.json())
+app.use(express.urlencoded({
+  extended:true
+}))
 
 app.use("/auth", authroutes);
 app.use("/profile", profileroutes);

@@ -10,6 +10,7 @@ route.get("/login", (req, res) => {
 route.get("/signup", (req, res) => res.render("signup"));
 
 route.post("/signup", (req, res) => {
+  console.log(req.body)
   const user = new User({
     username :req.body.username,
     password:req.body.password,
