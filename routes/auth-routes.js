@@ -10,17 +10,6 @@ route.get("/login", (req, res) => {
 route.get("/signup", (req, res) => res.render("signup"));
 
 route.post("/signup", (req, res) => {
-  // try {
-  //   const user = new User({
-  //     username: req.body.username,
-  //     password: req.body.password,
-  //   });
-  //   if (!user) throw new Error("Error creating user");
-
-  //   return res.redirect("/login");
-  // } catch (e) {
-  //   res.redirect("/signup");
-  // }
   const user = new User({
     username :req.body.username,
     email:req.body.email,
@@ -28,18 +17,18 @@ route.post("/signup", (req, res) => {
 
   })
   user.save().then((user)=>{
-    res.redirect('/login')
+    res.redirect('/auth/login')
   })
   .catch((err)=>{
     console.log(err);
-    res.redirect('/signup')
+    res.redirect('/auth/signup')
   })
 });
 
 route.post(
   "/login",
   passport.authenticate("local", {
-    failureRedirect: "/login",
+    failureRedirect: "/auth/login",
     successRedirect: "/profile/",
   })
 );
