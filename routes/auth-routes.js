@@ -12,15 +12,18 @@ route.get("/signup", (req, res) => res.render("signup"));
 route.post("/signup", (req, res) => {
   const user = new User({
     username :req.body.username,
+    password:req.body.password,
     email:req.body.email,
-    password:req.body.password
+    
 
   })
+  console.log(user)
   user.save().then((user)=>{
+    console.log('hum yahan se redirect kr rhe h ')
     res.redirect('/auth/login')
   })
   .catch((err)=>{
-    console.log(err);
+    console.log('your error is', err);
     res.redirect('/auth/signup')
   })
 });
